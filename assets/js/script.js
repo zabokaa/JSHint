@@ -11,7 +11,7 @@ async function getStatus(e) {
 
     const response = await fetch(queryString);
 
-    // getting data bac
+    // getting data back
     const data = await response.json();
 
 
