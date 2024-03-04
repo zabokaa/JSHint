@@ -11,10 +11,10 @@ async function getStatus(e) {
 
     const response = await fetch(queryString);
 
-    // getting data back
+    // getting data bac
     const data = await response.json();
 
-    
+
     if (response.ok) {
         console.log(data.expiry);
     }
