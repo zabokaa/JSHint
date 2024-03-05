@@ -100,3 +100,15 @@ function displayStatus(data) {
     document.getElementById("results-content").innerHTML = results;
     resultsModal.show();
 }
+
+// funct to display the exception in a modal
+function displayException(data) {
+    let heading = "An Exception Occurred";
+    results = `<div>status code: ${data.status_code}</div>`;
+    results += `<div>error number: <strong>${data.error_no}</strong></div>`;
+    results += `<div>error text: <strong>${data.error}</strong></div>`;
+
+    document.getElementById("resultsModalTitle").innerText = heading;
+    document.getElementById("results-content").innerHTML = results;
+    resultsModal.show();
+}
