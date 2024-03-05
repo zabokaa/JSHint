@@ -12,7 +12,18 @@ document.getElementById("submit").addEventListener("click", e => postForm(e));
 
 // function to handle the form submission: comma separated list of options, not a list
 function processOptions(form) {
-    
+    // iterate through the options,push them into a temporary array and then convert that into a string
+    let optArray = [];
+
+    for (let entry of form.entries()) {
+        if (entry[0] === "options") {
+            optArray.push(entry[1]);
+        } 
+    }
+    form.delete("options");
+    form.append("options", optArray.join());
+
+    return form;
 }
 
 // async function to post the form data using FORM DATA INTERFACE
