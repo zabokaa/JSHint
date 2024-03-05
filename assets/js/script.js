@@ -10,10 +10,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
 document.getElementById("status").addEventListener("click", e => getStatus(e));
 document.getElementById("submit").addEventListener("click", e => postForm(e));
 
+// function to handle the form submission: comma separated list of options, not a list
+function processOptions(form) {
+    
+}
+
 // async function to post the form data using FORM DATA INTERFACE
 async function postForm(e) {
 
-    const form = new FormData(document.getElementById("checksform"));
+    const form = processOptions(new FormData(document.getElementById("checksform")));
 
     const response = await fetch(API_URL, {
         method: "POST",
