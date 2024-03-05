@@ -7,12 +7,19 @@ document.getElementById("submit").addEventListener("click", e => postForm(e));
 
 // async function to post the form data using FORM DATA INTERFACE
 async function postForm(e) {
+
     const form = new FormData(document.getElementById("checksform"));
-    // entries method returns an iterator allowing to go through all elements in this object
-    for (let e of form.entries()) {
-        console.log(e);
-    }
+
+    const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+            "Authorization": API_KEY,
+        },
+        body: form,
+    });
+
 }
+
 
 
 // async function to display the status of the API    
